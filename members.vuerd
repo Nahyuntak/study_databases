@@ -187,9 +187,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 58,
-          "top": 3,
-          "zIndex": 207,
+          "left": 10,
+          "top": 6,
+          "zIndex": 306,
           "widthName": 164.98876953125,
           "widthComment": 60
         },
@@ -245,13 +245,36 @@
               "widthDefault": 60
             },
             "id": "52fb388b-916f-4f0d-85d7-5fa554c3c77a"
+          },
+          {
+            "name": "MEMBERS_HOBBY_ID",
+            "comment": "회원_취미 ID",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 140.70263671875,
+              "widthComment": 77.841796875,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "6c4783bb-1394-43fa-b33c-dc2d7436baa5"
           }
         ],
         "ui": {
           "active": false,
-          "left": 58,
-          "top": 428,
-          "zIndex": 225,
+          "left": 12,
+          "top": 438,
+          "zIndex": 300,
           "widthName": 120.47265625,
           "widthComment": 61.22998046875
         },
@@ -263,7 +286,7 @@
         "comment": "회원_로그인",
         "columns": [
           {
-            "name": "E-MAIL",
+            "name": "EMAIL",
             "comment": "이메일",
             "dataType": "VARCHAR",
             "default": "",
@@ -307,13 +330,36 @@
               "widthDefault": 60
             },
             "id": "2441b590-928b-4652-ae19-6426f450552d"
+          },
+          {
+            "name": "MEMBERS_LOGIN_ID",
+            "comment": "회원_로그인_ID",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 135.6435546875,
+              "widthComment": 94.4599609375,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "6f8c0e7e-620c-4f4e-bf3f-7bb41cdee50b"
           }
         ],
         "ui": {
           "active": false,
-          "left": 556,
-          "top": 304,
-          "zIndex": 222,
+          "left": 373,
+          "top": 251,
+          "zIndex": 302,
           "widthName": 115.41357421875,
           "widthComment": 74.22998046875
         },
@@ -324,7 +370,20 @@
     "indexes": []
   },
   "memo": {
-    "memos": []
+    "memos": [
+      {
+        "value": "회원정보에 대한 업무",
+        "ui": {
+          "active": false,
+          "left": 466,
+          "top": 25,
+          "zIndex": 275,
+          "width": 127,
+          "height": 100
+        },
+        "id": "cc94ebdb-9291-400e-8b8c-ffb7eae8785e"
+      }
+    ]
   },
   "relationship": {
     "relationships": [
@@ -337,8 +396,8 @@
           "columnIds": [
             "9dddbc1f-a147-49c2-b4d4-65e12f3fe774"
           ],
-          "x": 240.19482421875,
-          "y": 195,
+          "x": 192.19482421875,
+          "y": 198,
           "direction": "bottom"
         },
         "end": {
@@ -346,8 +405,8 @@
           "columnIds": [
             "52fb388b-916f-4f0d-85d7-5fa554c3c77a"
           ],
-          "x": 240.19482421875,
-          "y": 428,
+          "x": 237.072509765625,
+          "y": 438,
           "direction": "top"
         },
         "constraintName": "fk_members_information_to_members_hobby",
@@ -363,8 +422,8 @@
           "columnIds": [
             "9dddbc1f-a147-49c2-b4d4-65e12f3fe774"
           ],
-          "x": 422.3896484375,
-          "y": 99,
+          "x": 374.3896484375,
+          "y": 102,
           "direction": "right"
         },
         "end": {
@@ -372,8 +431,8 @@
           "columnIds": [
             "2441b590-928b-4652-ae19-6426f450552d"
           ],
-          "x": 556,
-          "y": 359,
+          "x": 373,
+          "y": 316.25,
           "direction": "left"
         },
         "constraintName": "fk_members_information_to_members_login",
