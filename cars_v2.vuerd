@@ -4,7 +4,7 @@
     "width": 2000,
     "height": 2000,
     "scrollTop": 0,
-    "scrollLeft": -2,
+    "scrollLeft": 0,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -178,29 +178,6 @@
             "id": "65167d90-5e86-4f6a-bfe8-9aee6b973c5d"
           },
           {
-            "name": "UNIQUE_ID",
-            "comment": "식별자",
-            "dataType": "VARCHAR",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 72.7890625,
-              "widthComment": 60,
-              "widthDataType": 64.6005859375,
-              "widthDefault": 60
-            },
-            "id": "e00302ff-e781-4b36-8eba-9fa1d2b67c5c"
-          },
-          {
             "name": "CARS_OPTIONS_ID",
             "comment": "자동차_옵션_ID",
             "dataType": "VARCHAR",
@@ -251,7 +228,7 @@
           "active": false,
           "left": 55,
           "top": 370,
-          "zIndex": 169,
+          "zIndex": 171,
           "widthName": 103.8544921875,
           "widthComment": 74.22998046875
         },
@@ -372,7 +349,7 @@
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 571,
           "top": 573,
           "zIndex": 170,
@@ -448,7 +425,7 @@
             "27db7e83-9af1-4638-805b-76cb7b7116c3"
           ],
           "x": 505.14501953125,
-          "y": 445.5,
+          "y": 435.25,
           "direction": "right"
         },
         "constraintName": "fk_cars_options_code_to_cars_options",
