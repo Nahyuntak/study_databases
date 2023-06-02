@@ -4,7 +4,7 @@
     "width": 2000,
     "height": 2000,
     "scrollTop": 0,
-    "scrollLeft": -52,
+    "scrollLeft": 0,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -263,8 +263,8 @@
         "comment": "회원_로그인",
         "columns": [
           {
-            "name": "ID",
-            "comment": "아이디",
+            "name": "E-MAIL",
+            "comment": "이메일",
             "dataType": "VARCHAR",
             "default": "",
             "option": {
@@ -284,29 +284,6 @@
               "widthDefault": 60
             },
             "id": "bf4a84ff-8e7a-4b50-a8c2-b1717fd3331d"
-          },
-          {
-            "name": "SECRET_NUMBER",
-            "comment": "비밀번호",
-            "dataType": "VARCHAR",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 118.29541015625,
-              "widthComment": 60,
-              "widthDataType": 64.6005859375,
-              "widthDefault": 60
-            },
-            "id": "887f7b28-ae46-4495-b406-df384af4f325"
           },
           {
             "name": "UNIQUE_ID",
@@ -334,9 +311,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 427,
-          "top": 280,
-          "zIndex": 212,
+          "left": 556,
+          "top": 304,
+          "zIndex": 222,
           "widthName": 115.41357421875,
           "widthComment": 74.22998046875
         },
@@ -360,7 +337,7 @@
           "columnIds": [
             "9dddbc1f-a147-49c2-b4d4-65e12f3fe774"
           ],
-          "x": 149.097412109375,
+          "x": 240.19482421875,
           "y": 195,
           "direction": "bottom"
         },
@@ -386,17 +363,17 @@
           "columnIds": [
             "9dddbc1f-a147-49c2-b4d4-65e12f3fe774"
           ],
-          "x": 331.292236328125,
-          "y": 195,
-          "direction": "bottom"
+          "x": 422.3896484375,
+          "y": 99,
+          "direction": "right"
         },
         "end": {
           "tableId": "4b049901-e075-4a64-a358-76559078b255",
           "columnIds": [
             "2441b590-928b-4652-ae19-6426f450552d"
           ],
-          "x": 427,
-          "y": 345.25,
+          "x": 556,
+          "y": 359,
           "direction": "left"
         },
         "constraintName": "fk_members_information_to_members_login",
