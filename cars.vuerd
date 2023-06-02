@@ -143,7 +143,7 @@
           "active": false,
           "left": 41,
           "top": 32,
-          "zIndex": 106,
+          "zIndex": 2,
           "widthName": 60,
           "widthComment": 60
         },
@@ -228,7 +228,7 @@
           "active": false,
           "left": 45,
           "top": 356,
-          "zIndex": 116,
+          "zIndex": 3,
           "widthName": 103.8544921875,
           "widthComment": 74.22998046875
         },
@@ -246,7 +246,7 @@
           "active": false,
           "left": 521,
           "top": 188,
-          "zIndex": 102,
+          "zIndex": 1,
           "width": 127,
           "height": 100
         },
