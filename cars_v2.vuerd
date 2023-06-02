@@ -1,0 +1,486 @@
+{
+  "canvas": {
+    "version": "2.2.11",
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": 0,
+    "scrollLeft": -2,
+    "zoomLevel": 1,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": false,
+      "columnPrimaryKey": true,
+      "columnUnique": false,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "MySQL",
+    "databaseName": "",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "highlightTheme": "VS2015",
+    "bracketType": "none",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "relationshipOptimization": false,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    },
+    "pluginSerializationMap": {}
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "CARS",
+        "comment": "자동차",
+        "columns": [
+          {
+            "name": "MODEL",
+            "comment": "자동차이름",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 67,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "ac9dc102-159b-4ebf-ad78-f9a589b74750"
+          },
+          {
+            "name": "YEAR_OF_PRODUCTION",
+            "comment": "연식",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 157.3017578125,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "0874c96b-fff3-4301-8818-bf9e6b7a3df5"
+          },
+          {
+            "name": "UNIQUE_ID",
+            "comment": "식별자",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 72.7890625,
+              "widthComment": 60,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "50119ec4-9da4-4788-b3bb-816478785fc4"
+          },
+          {
+            "name": "CARS_COMPANY_CODE_ID",
+            "comment": "회사이름_ID",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 175.13232421875,
+              "widthComment": 74.22998046875,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "5b45702e-dcc6-41f5-b4ed-9ce89ddadfdc"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 41,
+          "top": 32,
+          "zIndex": 168,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "a8ba376a-a038-4651-82a5-177ffb2d647e"
+      },
+      {
+        "name": "CARS_OPTIONS",
+        "comment": "자동차_옵션",
+        "columns": [
+          {
+            "name": "OPTIONS",
+            "comment": "옵션",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60.50634765625,
+              "widthComment": 60,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "65167d90-5e86-4f6a-bfe8-9aee6b973c5d"
+          },
+          {
+            "name": "UNIQUE_ID",
+            "comment": "식별자",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 72.7890625,
+              "widthComment": 60,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "e00302ff-e781-4b36-8eba-9fa1d2b67c5c"
+          },
+          {
+            "name": "CARS_OPTIONS_ID",
+            "comment": "자동차_옵션_ID",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 124.08447265625,
+              "widthComment": 94.4599609375,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "27db7e83-9af1-4638-805b-76cb7b7116c3"
+          },
+          {
+            "name": "UNIQUE_ID",
+            "comment": "식별자",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 72.7890625,
+              "widthComment": 60,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "a2d7be69-1e6e-492f-9751-44a0f4f7c77f"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 55,
+          "top": 370,
+          "zIndex": 169,
+          "widthName": 103.8544921875,
+          "widthComment": 74.22998046875
+        },
+        "visible": true,
+        "id": "d34f8c95-b398-4553-a882-3de550f970ac"
+      },
+      {
+        "name": "CARS_COMPANY_CODE",
+        "comment": "회사이름_코드",
+        "columns": [
+          {
+            "name": "COMPANY",
+            "comment": "회사이름",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 66.76513671875,
+              "widthComment": 60,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "0bd16671-182c-46b6-bdd4-c7682766a68f"
+          },
+          {
+            "name": "CARS_COMPANY_CODE_ID",
+            "comment": "회사이름_ID",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 175.13232421875,
+              "widthComment": 74.22998046875,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "42c83cb2-b4f8-4e20-b27c-67a11ac97e3c"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 622,
+          "top": 280,
+          "zIndex": 106,
+          "widthName": 154.90234375,
+          "widthComment": 87.22998046875
+        },
+        "visible": true,
+        "id": "a72dd68a-30b6-435b-ade8-baea109ff649"
+      },
+      {
+        "name": "CARS_OPTIONS_CODE",
+        "comment": "자동차_옵션_코드",
+        "columns": [
+          {
+            "name": "OPTIONS",
+            "comment": "옵션",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60.50634765625,
+              "widthComment": 60,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "e06fd202-dcf5-4186-8b73-ec5bf08aa377"
+          },
+          {
+            "name": "CARS_OPTIONS_ID",
+            "comment": "자동차_옵션_ID",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 124.08447265625,
+              "widthComment": 94.4599609375,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "a027ee5e-298b-42a1-8d16-3cba5eb12e8a"
+          }
+        ],
+        "ui": {
+          "active": true,
+          "left": 571,
+          "top": 573,
+          "zIndex": 170,
+          "widthName": 148.6435546875,
+          "widthComment": 107.4599609375
+        },
+        "visible": true,
+        "id": "83416f81-2727-4aed-8529-754897fd4e49"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": [
+      {
+        "value": "자동차에 대한 정보",
+        "ui": {
+          "active": false,
+          "left": 618,
+          "top": 40,
+          "zIndex": 4,
+          "width": 127,
+          "height": 100
+        },
+        "id": "890a6654-2ab5-4eb2-afa1-92b713e3ea36"
+      }
+    ]
+  },
+  "relationship": {
+    "relationships": [
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "a72dd68a-30b6-435b-ade8-baea109ff649",
+          "columnIds": [
+            "42c83cb2-b4f8-4e20-b27c-67a11ac97e3c"
+          ],
+          "x": 622,
+          "y": 335,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "a8ba376a-a038-4651-82a5-177ffb2d647e",
+          "columnIds": [
+            "5b45702e-dcc6-41f5-b4ed-9ce89ddadfdc"
+          ],
+          "x": 521.962890625,
+          "y": 107.5,
+          "direction": "right"
+        },
+        "constraintName": "fk_cars_company_code_to_cars",
+        "visible": true,
+        "id": "bea7edce-2403-4477-ad11-af41569c4a1c"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "83416f81-2727-4aed-8529-754897fd4e49",
+          "columnIds": [
+            "a027ee5e-298b-42a1-8d16-3cba5eb12e8a"
+          ],
+          "x": 571,
+          "y": 628,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "d34f8c95-b398-4553-a882-3de550f970ac",
+          "columnIds": [
+            "27db7e83-9af1-4638-805b-76cb7b7116c3"
+          ],
+          "x": 505.14501953125,
+          "y": 445.5,
+          "direction": "right"
+        },
+        "constraintName": "fk_cars_options_code_to_cars_options",
+        "visible": true,
+        "id": "37db59ec-1d22-4189-aab4-57be2956a28c"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "a8ba376a-a038-4651-82a5-177ffb2d647e",
+          "columnIds": [
+            "50119ec4-9da4-4788-b3bb-816478785fc4"
+          ],
+          "x": 281.4814453125,
+          "y": 183,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "d34f8c95-b398-4553-a882-3de550f970ac",
+          "columnIds": [
+            "a2d7be69-1e6e-492f-9751-44a0f4f7c77f"
+          ],
+          "x": 280.072509765625,
+          "y": 370,
+          "direction": "top"
+        },
+        "constraintName": "fk_cars_to_cars_options",
+        "visible": true,
+        "id": "0062f7b9-bee3-4ae7-8207-f0e30838b0a7"
+      }
+    ]
+  }
+}
