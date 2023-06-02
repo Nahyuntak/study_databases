@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -12,
-    "scrollLeft": -21,
+    "scrollTop": 0,
+    "scrollLeft": -4,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -216,7 +216,20 @@
     "indexes": []
   },
   "memo": {
-    "memos": []
+    "memos": [
+      {
+        "value": "자동차에 대한 정보",
+        "ui": {
+          "active": false,
+          "left": 521,
+          "top": 188,
+          "zIndex": 102,
+          "width": 127,
+          "height": 100
+        },
+        "id": "890a6654-2ab5-4eb2-afa1-92b713e3ea36"
+      }
+    ]
   },
   "relationship": {
     "relationships": [
