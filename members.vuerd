@@ -249,9 +249,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 0,
-          "top": 423,
-          "zIndex": 211,
+          "left": 58,
+          "top": 428,
+          "zIndex": 225,
           "widthName": 120.47265625,
           "widthComment": 61.22998046875
         },
@@ -346,8 +346,8 @@
           "columnIds": [
             "52fb388b-916f-4f0d-85d7-5fa554c3c77a"
           ],
-          "x": 182.19482421875,
-          "y": 423,
+          "x": 240.19482421875,
+          "y": 428,
           "direction": "top"
         },
         "constraintName": "fk_members_information_to_members_hobby",
