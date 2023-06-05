@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -487,
-    "scrollLeft": -213,
+    "scrollTop": -481,
+    "scrollLeft": -245,
     "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
@@ -49,13 +49,13 @@
           {
             "name": "NAME",
             "comment": "이름",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -64,7 +64,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "4564200f-85fa-470b-b21e-27261664183d"
@@ -78,7 +78,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -95,13 +95,13 @@
           {
             "name": "PHONE",
             "comment": "전화번호",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -110,7 +110,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "d268e7b4-e652-45c5-af57-c25f14bf987e"
@@ -118,7 +118,7 @@
           {
             "name": "MEMBERS_ID",
             "comment": "식별자",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -133,7 +133,7 @@
               "pfk": false,
               "widthName": 87.9599609375,
               "widthComment": 60,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "9dddbc1f-a147-49c2-b4d4-65e12f3fe774"
@@ -141,7 +141,7 @@
           {
             "name": "SEX_CODE",
             "comment": "성별코드_ID",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -156,7 +156,7 @@
               "pfk": false,
               "widthName": 72.8017578125,
               "widthComment": 74.22998046875,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "5da95221-3b5c-4907-99fd-b3d09aea36ad"
@@ -164,7 +164,7 @@
           {
             "name": "ADDRESS_CODE",
             "comment": "주소코드_ID",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -179,7 +179,7 @@
               "pfk": false,
               "widthName": 109.63720703125,
               "widthComment": 74.22998046875,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "ea16bf7f-146a-4b29-bf77-e607c8520a23"
@@ -189,7 +189,7 @@
           "active": false,
           "left": 291.7492,
           "top": 885.8531,
-          "zIndex": 128,
+          "zIndex": 52,
           "widthName": 164.98876953125,
           "widthComment": 60
         },
@@ -203,7 +203,7 @@
           {
             "name": "MEMBERS_ID",
             "comment": "식별자",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -218,7 +218,7 @@
               "pfk": false,
               "widthName": 87.9599609375,
               "widthComment": 60,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "52fb388b-916f-4f0d-85d7-5fa554c3c77a"
@@ -226,7 +226,7 @@
           {
             "name": "HOBBY_CODE_ID",
             "comment": "식별자",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -241,7 +241,7 @@
               "pfk": false,
               "widthName": 112.53173828125,
               "widthComment": 60,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "2877b185-b629-4ee4-a7f8-f291ba629636"
@@ -251,7 +251,7 @@
           "active": false,
           "left": 474.5525024453001,
           "top": 463.77316563949216,
-          "zIndex": 62,
+          "zIndex": 13,
           "widthName": 120.47265625,
           "widthComment": 61.22998046875
         },
@@ -265,13 +265,13 @@
           {
             "name": "EMAIL",
             "comment": "이메일",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -280,7 +280,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "bf4a84ff-8e7a-4b50-a8c2-b1717fd3331d"
@@ -288,7 +288,7 @@
           {
             "name": "MEMBERS_ID",
             "comment": "식별자",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -303,7 +303,7 @@
               "pfk": false,
               "widthName": 87.9599609375,
               "widthComment": 60,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "2441b590-928b-4652-ae19-6426f450552d"
@@ -311,7 +311,7 @@
           {
             "name": "MEMBERS_LOGIN_ID",
             "comment": "회원_로그인_ID",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -326,7 +326,7 @@
               "pfk": false,
               "widthName": 135.6435546875,
               "widthComment": 94.4599609375,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "6a0a8551-d7ba-4c65-b252-6d5f401bbbe6"
@@ -336,7 +336,7 @@
           "active": false,
           "left": 23,
           "top": 1264.0842,
-          "zIndex": 125,
+          "zIndex": 54,
           "widthName": 115.41357421875,
           "widthComment": 74.22998046875
         },
@@ -350,13 +350,13 @@
           {
             "name": "HOBBYS",
             "comment": "취미",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -365,7 +365,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "c5eb23a1-fc40-4514-88a9-c69d054e5dd0"
@@ -373,7 +373,7 @@
           {
             "name": "HOBBY_CODE_ID",
             "comment": "취미코드_ID",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -388,7 +388,7 @@
               "pfk": false,
               "widthName": 112.53173828125,
               "widthComment": 74.22998046875,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "34b14a22-9105-4952-9b18-c225adc01b7f"
@@ -398,7 +398,7 @@
           "active": false,
           "left": 62.1668,
           "top": 650.4218,
-          "zIndex": 126,
+          "zIndex": 43,
           "widthName": 92.3017578125,
           "widthComment": 60
         },
@@ -412,13 +412,13 @@
           {
             "name": "SEX",
             "comment": "성별",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -427,7 +427,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "ccc2a62c-5578-43c0-988b-c0613ffae29a"
@@ -435,7 +435,7 @@
           {
             "name": "SEX_CODE_ID",
             "comment": "성별코드_ID",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -450,7 +450,7 @@
               "pfk": false,
               "widthName": 93.03173828125,
               "widthComment": 74.22998046875,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "03b06c2c-6bd9-4d0b-bbfa-9a88dfac8804"
@@ -460,7 +460,7 @@
           "active": false,
           "left": 714.7617,
           "top": 1261.6148,
-          "zIndex": 124,
+          "zIndex": 72,
           "widthName": 93.03173828125,
           "widthComment": 60
         },
@@ -469,18 +469,18 @@
       },
       {
         "name": "ADDRESS_CODE_ID",
-        "comment": "주소코드_ID",
+        "comment": "주소코드",
         "columns": [
           {
             "name": "ADDRESS",
             "comment": "주소",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -489,7 +489,7 @@
               "pfk": false,
               "widthName": 64.84814453125,
               "widthComment": 60,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "64bf38d4-2d36-49d4-8494-cd8b0cf98c4a"
@@ -497,7 +497,7 @@
           {
             "name": "ADDRESS_CODE_ID",
             "comment": "주소코드_ID",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -512,7 +512,7 @@
               "pfk": false,
               "widthName": 129.8671875,
               "widthComment": 74.22998046875,
-              "widthDataType": 64.6005859375,
+              "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "0108667c-dbf7-4116-845a-aa5bd23f6c3a"
@@ -522,9 +522,9 @@
           "active": false,
           "left": 777.4829051956814,
           "top": 771.0893770245682,
-          "zIndex": 111,
+          "zIndex": 70,
           "widthName": 129.8671875,
-          "widthComment": 74.22998046875
+          "widthComment": 60
         },
         "visible": true,
         "id": "5015cb52-0076-4592-b560-6efaee435851"
@@ -540,7 +540,7 @@
           "active": false,
           "left": 914.3333333333335,
           "top": 600.6666666666669,
-          "zIndex": 122,
+          "zIndex": 3,
           "width": 127,
           "height": 100
         },
@@ -559,7 +559,7 @@
           "columnIds": [
             "9dddbc1f-a147-49c2-b4d4-65e12f3fe774"
           ],
-          "x": 499.48308671875,
+          "x": 511.04216875,
           "y": 885.8531,
           "direction": "top"
         },
@@ -568,7 +568,7 @@
           "columnIds": [
             "52fb388b-916f-4f0d-85d7-5fa554c3c77a"
           ],
-          "x": 676.6186645546751,
+          "x": 688.1777465859251,
           "y": 573.7731656394922,
           "direction": "bottom"
         },
@@ -585,7 +585,7 @@
           "columnIds": [
             "9dddbc1f-a147-49c2-b4d4-65e12f3fe774"
           ],
-          "x": 395.616143359375,
+          "x": 401.395684375,
           "y": 1077.8531,
           "direction": "bottom"
         },
@@ -594,7 +594,7 @@
           "columnIds": [
             "2441b590-928b-4652-ae19-6426f450552d"
           ],
-          "x": 484.7041015625,
+          "x": 507.822265625,
           "y": 1329.3342,
           "direction": "right"
         },
@@ -611,7 +611,7 @@
           "columnIds": [
             "34b14a22-9105-4952-9b18-c225adc01b7f"
           ],
-          "x": 480.5291046875,
+          "x": 503.64726875,
           "y": 705.4218,
           "direction": "right"
         },
@@ -646,7 +646,7 @@
           "columnIds": [
             "5da95221-3b5c-4907-99fd-b3d09aea36ad"
           ],
-          "x": 603.350030078125,
+          "x": 620.688653125,
           "y": 1077.8531,
           "direction": "bottom"
         },
@@ -672,7 +672,7 @@
           "columnIds": [
             "ea16bf7f-146a-4b29-bf77-e607c8520a23"
           ],
-          "x": 707.2169734375,
+          "x": 730.3351375,
           "y": 981.8531,
           "direction": "right"
         },
