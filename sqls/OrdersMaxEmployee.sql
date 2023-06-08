@@ -1,7 +1,7 @@
 -- - Table : Orders
 -- - 조건 : 가장 많이 주문 받은 회사 직원이름과 갯수
 
--- 1) 첫번째 방법
+-- 1) 첫번째 방법: 표 Orders에서
 SELECT MAX(OrdersMaxEmployee.COUNT_ID) AS MAX_OrdersMaxEmployee, OrdersMaxEmployee.NAME 
 FROM (SELECT Orders_S.EmployeeID, COUNT(Orders_S.EmployeeID) AS COUNT_ID, Employees_S.LastName AS NAME 
 FROM Orders AS Orders_S
