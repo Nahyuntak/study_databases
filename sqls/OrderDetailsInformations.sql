@@ -1,96 +1,535 @@
 
-select OrderDetailsInformations.CustomerName, OrderDetailsInformations.ProductName, OrderDetailsInformations.Price, count(OrderDetailsInformations.ProductID) as Product_n
+select OrderDetailsInformations.CustomerName,OrderDetailsInformations.Quantity,  OrderDetailsInformations.ProductName, OrderDetailsInformations.Price
 from (select Customers_copy.*, products.ProductName, products.Price
 from (Select Customers.CustomerName, Orders_copy.* 
 from (SELECT Orders.CustomerID, OrderDetails.*
-FROM OrderDetails
+from OrderDetails
 inner join Orders 
 on Orders.OrderID = OrderDetails.OrderID) as Orders_copy
 inner join Customers
 on Orders_copy.CustomerID = Customers.CustomerID) as Customers_copy
 inner join products
 on Customers_copy.ProductID = products.ProductID) as OrderDetailsInformations
-group by OrderDetailsInformations.ProductID
+
 
 -- Result:
--- Number of Records: 77
--- CustomerName	ProductName	Price	Product_n
--- QUICK-Stop	Chais	18	8
--- Richter Supermarkt	Chang	19	11
--- B's Beverages	Aniseed Syrup	10	2
--- Hungry Owl All-Night Grocers	Chef Anton's Cajun Seasoning	22	5
--- Ernst Handel	Chef Anton's Gumbo Mix	21.35	4
--- Hungry Owl All-Night Grocers	Grandma's Boysenberry Spread	25	2
--- Rattlesnake Canyon Grocery	Uncle Bob's Organic Dried Pears	30	2
--- White Clover Markets	Northwoods Cranberry Sauce	40	2
--- Wellington Importadora	Mishi Kobe Niku	97	1
--- QUICK-Stop	Ikura	31	4
--- Wilman Kala	Queso Cabrales	21	9
--- Wartian Herkku	Queso Manchego La Pastora	38	2
--- Tortuga Restaurante	Konbu	6	7
--- Tradição Hipermercados	Tofu	23.25	8
--- LILA-Supermercado	Genen Shouyu	15.5	2
--- Richter Supermarkt	Pavlova	17.45	10
--- Blondel père et fils	Alice Mutton	39	11
--- Tortuga Restaurante	Carnarvon Tigers	62.5	5
--- Romero y tomillo	Teatime Chocolate Biscuits	9.2	9
--- Suprêmes délices	Sir Rodney's Marmalade	81	5
--- Centro comercial Moctezuma	Sir Rodney's Scones	10	8
--- Victuailles en stock	Gustaf's Knäckebröd	21	2
--- Frankenversand	Tunnbröd	9	4
--- Chop-suey Chinese	Guaraná Fantástica	4.5	11
--- Königlich Essen	NuNuCa Nuß-Nougat-Creme	14	4
--- LILA-Supermercado	Gumbär Gummibärchen	31.23	8
--- HILARIÓN-Abastos	Schoggi Schokolade	43.9	3
--- Morgenstern Gesundkost	Rössle Sauerkraut	45.6	10
--- GROSELLA-Restaurante	Thüringer Rostbratwurst	123.79	9
--- Ernst Handel	Nord-Ost Matjeshering	25.89	8
--- Hanari Carnes	Gorgonzola Telino	12.5	14
--- Ernst Handel	Mascarpone Fabioli	32	3
--- Suprêmes délices	Geitost	2.5	9
--- Ricardo Adocicados	Sasquatch Ale	14	6
--- Que Delícia	Steeleye Stout	18	9
--- Richter Supermarkt	Inlagd Sill	19	9
--- Centro comercial Moctezuma	Gravad lax	26	3
--- Split Rail Beer & Ale	Côte de Blaye	263.5	7
--- Hanari Carnes	Chartreuse verte	18	8
--- Frankenversand	Boston Crab Meat	18.4	8
--- Hanari Carnes	Jack's New England Clam Chowder	9.65	9
--- Wilman Kala	Singaporean Hokkien Fried Mee	14	6
--- Wartian Herkku	Ipoh Coffee	46	6
--- Berglunds snabbköp	Gula Malacca	19.45	5
--- Seven Seas Imports	Røgede sild	9.5	1
--- Ricardo Adocicados	Spegesild	12	7
--- Mère Paillarde	Zaanse koeken	9.5	3
--- Ernst Handel	Chocolade	12.75	1
--- Hanari Carnes	Maxilaku	20	6
--- La maison d'Asie	Valkoinen suklaa	16.25	3
--- Tradição Hipermercados	Manjimup Dried Apples	53	6
--- Pericles Comidas clásicas	Filo Mix	7	3
--- Wellington Importadora	Perth Pasties	32.8	10
--- Reggiani Caseifici	Tourtière	7.45	12
--- Chop-suey Chinese	Pâté chinois	24	7
--- Rattlesnake Canyon Grocery	Gnocchi di nonna Alice	38	12
--- Victuailles en stock	Ravioli Angelo	19.5	8
--- Rattlesnake Canyon Grocery	Escargots de Bourgogne	13.25	4
--- Richter Supermarkt	Raclette Courdavault	55	14
--- Suprêmes délices	Camembert Pierrot	34	12
--- QUICK-Stop	Sirop d'érable	28.5	2
--- Old World Delicatessen	Tarte au sucre	49.3	13
--- Berglunds snabbköp	Vegie-spread	43.9	6
--- B's Beverages	Wimmers gute Semmelknödel	33.25	7
--- Hanari Carnes	Louisiana Fiery Hot Pepper Sauce	21.05	9
--- Magazzini Alimentari Riuniti	Louisiana Hot Spiced Okra	17	2
--- Lehmanns Marktstand	Laughing Lumberjack Lager	14	1
--- Reggiani Caseifici	Scottish Longbreads	12.5	11
--- LILA-Supermercado	Gudbrandsdalsost	36	10
--- Old World Delicatessen	Outback Lager	15	8
--- Vins et alcools Chevalier	Fløtemysost	21.5	13
--- Wilman Kala	Mozzarella di Giovanni	34.8	14
--- Berglunds snabbköp	Röd Kaviar	15	2
--- Chop-suey Chinese	Longlife Tofu	10	7
--- Berglunds snabbköp	Rhönbräu Klosterbier	7.75	8
--- Frankenversand	Lakkalikööri	18	10
--- Wellington Importadora	Original Frankfurter grüne Soße	13	8
-
-
+-- Number of Records: 518
+-- CustomerName	Quantity	ProductName	Price
+-- Wilman Kala	12	Queso Cabrales	21
+-- Wilman Kala	10	Singaporean Hokkien Fried Mee	14
+-- Wilman Kala	5	Mozzarella di Giovanni	34.8
+-- Tradição Hipermercados	9	Tofu	23.25
+-- Tradição Hipermercados	40	Manjimup Dried Apples	53
+-- Hanari Carnes	10	Jack's New England Clam Chowder	9.65
+-- Hanari Carnes	35	Manjimup Dried Apples	53
+-- Hanari Carnes	15	Louisiana Fiery Hot Pepper Sauce	21.05
+-- Victuailles en stock	6	Gustaf's Knäckebröd	21
+-- Victuailles en stock	15	Ravioli Angelo	19.5
+-- Victuailles en stock	20	Louisiana Fiery Hot Pepper Sauce	21.05
+-- Suprêmes délices	40	Sir Rodney's Marmalade	81
+-- Suprêmes délices	25	Geitost	2.5
+-- Suprêmes délices	40	Camembert Pierrot	34
+-- Hanari Carnes	20	Gorgonzola Telino	12.5
+-- Hanari Carnes	42	Chartreuse verte	18
+-- Hanari Carnes	40	Maxilaku	20
+-- Chop-suey Chinese	15	Guaraná Fantástica	4.5
+-- Chop-suey Chinese	21	Pâté chinois	24
+-- Chop-suey Chinese	21	Longlife Tofu	10
+-- Richter Supermarkt	20	Chang	19
+-- Richter Supermarkt	35	Pavlova	17.45
+-- Richter Supermarkt	25	Inlagd Sill	19
+-- Richter Supermarkt	30	Raclette Courdavault	55
+-- Wellington Importadora	15	Perth Pasties	32.8
+-- Wellington Importadora	12	Original Frankfurter grüne Soße	13
+-- HILARIÓN-Abastos	25	Schoggi Schokolade	43.9
+-- HILARIÓN-Abastos	6	Chartreuse verte	18
+-- HILARIÓN-Abastos	15	Original Frankfurter grüne Soße	13
+-- Ernst Handel	50	Chang	19
+-- Ernst Handel	65	Chef Anton's Gumbo Mix	21.35
+-- Ernst Handel	6	Mascarpone Fabioli	32
+-- Centro comercial Moctezuma	10	Sir Rodney's Scones	10
+-- Centro comercial Moctezuma	1	Gravad lax	26
+-- Old World Delicatessen	16	Jack's New England Clam Chowder	9.65
+-- Old World Delicatessen	50	Ravioli Angelo	19.5
+-- Old World Delicatessen	15	Tarte au sucre	49.3
+-- Old World Delicatessen	21	Outback Lager	15
+-- Que Delícia	20	Sir Rodney's Scones	10
+-- Que Delícia	20	Steeleye Stout	18
+-- Rattlesnake Canyon Grocery	12	Chef Anton's Gumbo Mix	21.35
+-- Rattlesnake Canyon Grocery	15	Uncle Bob's Organic Dried Pears	30
+-- Rattlesnake Canyon Grocery	2	Gnocchi di nonna Alice	38
+-- Ernst Handel	60	Pavlova	17.45
+-- Ernst Handel	28	Guaraná Fantástica	4.5
+-- Ernst Handel	60	Nord-Ost Matjeshering	25.89
+-- Ernst Handel	36	Longlife Tofu	10
+-- Folk och fä HB	35	Chang	19
+-- Folk och fä HB	25	Jack's New England Clam Chowder	9.65
+-- Blondel père et fils	30	Alice Mutton	39
+-- Blondel père et fils	20	Outback Lager	15
+-- Wartian Herkku	12	Queso Manchego La Pastora	38
+-- Frankenversand	50	Boston Crab Meat	18.4
+-- Frankenversand	70	Raclette Courdavault	55
+-- Frankenversand	15	Lakkalikööri	18
+-- GROSELLA-Restaurante	10	Thüringer Rostbratwurst	123.79
+-- GROSELLA-Restaurante	4	Mozzarella di Giovanni	34.8
+-- White Clover Markets	60	Geitost	2.5
+-- White Clover Markets	20	Mozzarella di Giovanni	34.8
+-- Wartian Herkku	30	Inlagd Sill	19
+-- Wartian Herkku	25	Ipoh Coffee	46
+-- Split Rail Beer & Ale	24	Geitost	2.5
+-- Rattlesnake Canyon Grocery	6	Sir Rodney's Marmalade	81
+-- Rattlesnake Canyon Grocery	40	Gorgonzola Telino	12.5
+-- Rattlesnake Canyon Grocery	24	Mozzarella di Giovanni	34.8
+-- QUICK-Stop	24	Ikura	31
+-- QUICK-Stop	15	Gorgonzola Telino	12.5
+-- QUICK-Stop	20	Geitost	2.5
+-- QUICK-Stop	60	Boston Crab Meat	18.4
+-- QUICK-Stop	33	Lakkalikööri	18
+-- Vins et alcools Chevalier	20	Fløtemysost	21.5
+-- Vins et alcools Chevalier	7	Mozzarella di Giovanni	34.8
+-- Magazzini Alimentari Riuniti	12	Guaraná Fantástica	4.5
+-- Magazzini Alimentari Riuniti	6	Raclette Courdavault	55
+-- Tortuga Restaurante	15	Ikura	31
+-- Tortuga Restaurante	10	Konbu	6
+-- Morgenstern Gesundkost	20	Rössle Sauerkraut	45.6
+-- Morgenstern Gesundkost	12	Tarte au sucre	49.3
+-- Berglunds snabbköp	16	Gula Malacca	19.45
+-- Berglunds snabbköp	15	Raclette Courdavault	55
+-- Berglunds snabbköp	8	Vegie-spread	43.9
+-- Berglunds snabbköp	25	Röd Kaviar	15
+-- Lehmanns Marktstand	15	Alice Mutton	39
+-- Berglunds snabbköp	12	Guaraná Fantástica	4.5
+-- Berglunds snabbköp	20	Pâté chinois	24
+-- Berglunds snabbköp	30	Rhönbräu Klosterbier	7.75
+-- Romero y tomillo	1	Teatime Chocolate Biscuits	9.2
+-- Romero y tomillo	6	Guaraná Fantástica	4.5
+-- Romero y tomillo	4	Steeleye Stout	18
+-- Romero y tomillo	6	Nord-Ost Matjeshering	25.89
+-- Romero y tomillo	2	Ravioli Angelo	19.5
+-- LILA-Supermercado	20	Genen Shouyu	15.5
+-- LILA-Supermercado	18	Teatime Chocolate Biscuits	9.2
+-- LILA-Supermercado	35	Camembert Pierrot	34
+-- LILA-Supermercado	3	Mozzarella di Giovanni	34.8
+-- Lehmanns Marktstand	15	Schoggi Schokolade	43.9
+-- Lehmanns Marktstand	21	Gula Malacca	19.45
+-- Lehmanns Marktstand	20	Camembert Pierrot	34
+-- Lehmanns Marktstand	5	Laughing Lumberjack Lager	14
+-- QUICK-Stop	45	Chais	18
+-- QUICK-Stop	40	Boston Crab Meat	18.4
+-- QUICK-Stop	36	Perth Pasties	32.8
+-- QUICK-Stop	100	Steeleye Stout	18
+-- QUICK-Stop	40	Tarte au sucre	49.3
+-- Ricardo Adocicados	40	Pavlova	17.45
+-- Ricardo Adocicados	20	Sasquatch Ale	14
+-- Ricardo Adocicados	15	Spegesild	12
+-- Reggiani Caseifici	10	Tourtière	7.45
+-- Reggiani Caseifici	3	Scottish Longbreads	12.5
+-- B's Beverages	30	Aniseed Syrup	10
+-- B's Beverages	9	Wimmers gute Semmelknödel	33.25
+-- Comércio Mineiro	20	Chef Anton's Gumbo Mix	21.35
+-- Comércio Mineiro	15	Thüringer Rostbratwurst	123.79
+-- Comércio Mineiro	15	Maxilaku	20
+-- Comércio Mineiro	10	Original Frankfurter grüne Soße	13
+-- Que Delícia	20	Konbu	6
+-- Que Delícia	24	Gula Malacca	19.45
+-- Que Delícia	2	Manjimup Dried Apples	53
+-- Tradição Hipermercados	20	Sir Rodney's Marmalade	81
+-- Tortuga Restaurante	12	Carnarvon Tigers	62.5
+-- Tortuga Restaurante	10	Guaraná Fantástica	4.5
+-- Tortuga Restaurante	5	Vegie-spread	43.9
+-- Tortuga Restaurante	6	Rhönbräu Klosterbier	7.75
+-- Rattlesnake Canyon Grocery	18	Chais	18
+-- Rattlesnake Canyon Grocery	15	Alice Mutton	39
+-- Rattlesnake Canyon Grocery	15	Ipoh Coffee	46
+-- Rattlesnake Canyon Grocery	21	Camembert Pierrot	34
+-- Rattlesnake Canyon Grocery	6	Rhönbräu Klosterbier	7.75
+-- Vins et alcools Chevalier	4	Gnocchi di nonna Alice	38
+-- LILA-Supermercado	12	Queso Cabrales	21
+-- LILA-Supermercado	30	Pavlova	17.45
+-- LILA-Supermercado	15	Gudbrandsdalsost	36
+-- Blondel père et fils	60	Chartreuse verte	18
+-- Blondel père et fils	20	Mozzarella di Giovanni	34.8
+-- Hungry Owl All-Night Grocers	40	Chang	19
+-- Hungry Owl All-Night Grocers	40	Inlagd Sill	19
+-- Hungry Owl All-Night Grocers	30	Raclette Courdavault	55
+-- Hungry Owl All-Night Grocers	15	Tarte au sucre	49.3
+-- Ricardo Adocicados	15	Teatime Chocolate Biscuits	9.2
+-- Ricardo Adocicados	20	Outback Lager	15
+-- Magazzini Alimentari Riuniti	30	Louisiana Hot Spiced Okra	17
+-- Magazzini Alimentari Riuniti	20	Scottish Longbreads	12.5
+-- Die Wandernde Kuh	10	Boston Crab Meat	18.4
+-- Die Wandernde Kuh	20	Gnocchi di nonna Alice	38
+-- Suprêmes délices	40	Alice Mutton	39
+-- Suprêmes délices	28	Rössle Sauerkraut	45.6
+-- Suprêmes délices	12	Ipoh Coffee	46
+-- Godos Cocina Típica	40	Boston Crab Meat	18.4
+-- Godos Cocina Típica	30	Louisiana Fiery Hot Pepper Sauce	21.05
+-- Godos Cocina Típica	15	Scottish Longbreads	12.5
+-- Tortuga Restaurante	30	Maxilaku	20
+-- Tortuga Restaurante	10	Raclette Courdavault	55
+-- Tortuga Restaurante	2	Fløtemysost	21.5
+-- Old World Delicatessen	25	Carnarvon Tigers	62.5
+-- Old World Delicatessen	25	Thüringer Rostbratwurst	123.79
+-- Old World Delicatessen	30	Chartreuse verte	18
+-- Romero y tomillo	10	Nord-Ost Matjeshering	25.89
+-- Romero y tomillo	10	Perth Pasties	32.8
+-- Romero y tomillo	5	Tourtière	7.45
+-- Lonesome Pine Restaurant	10	Tarte au sucre	49.3
+-- Lonesome Pine Restaurant	3	Scottish Longbreads	12.5
+-- Ana Trujillo Emparedados y helados	1	Gudbrandsdalsost	36
+-- Ana Trujillo Emparedados y helados	5	Outback Lager	15
+-- Hungry Owl All-Night Grocers	20	Chef Anton's Cajun Seasoning	22
+-- Hungry Owl All-Night Grocers	30	Grandma's Boysenberry Spread	25
+-- Hungry Owl All-Night Grocers	2	Singaporean Hokkien Fried Mee	14
+-- Hungry Owl All-Night Grocers	20	Ipoh Coffee	46
+-- Hungry Owl All-Night Grocers	3	Fløtemysost	21.5
+-- The Big Cheese	10	Pavlova	17.45
+-- The Big Cheese	5	Tarte au sucre	49.3
+-- Du monde entier	6	Singaporean Hokkien Fried Mee	14
+-- Du monde entier	7	Gudbrandsdalsost	36
+-- Die Wandernde Kuh	4	Rössle Sauerkraut	45.6
+-- Die Wandernde Kuh	24	Ipoh Coffee	46
+-- Die Wandernde Kuh	20	Perth Pasties	32.8
+-- Die Wandernde Kuh	10	Rhönbräu Klosterbier	7.75
+-- QUICK-Stop	12	Inlagd Sill	19
+-- Rattlesnake Canyon Grocery	40	Mascarpone Fabioli	32
+-- Rattlesnake Canyon Grocery	30	Escargots de Bourgogne	13.25
+-- Rattlesnake Canyon Grocery	25	Tarte au sucre	49.3
+-- Island Trading	14	Sasquatch Ale	14
+-- Island Trading	30	Outback Lager	15
+-- Rattlesnake Canyon Grocery	10	Jack's New England Clam Chowder	9.65
+-- Rattlesnake Canyon Grocery	70	Tarte au sucre	49.3
+-- Lonesome Pine Restaurant	20	Chais	18
+-- Island Trading	20	Jack's New England Clam Chowder	9.65
+-- Island Trading	6	Lakkalikööri	18
+-- Tortuga Restaurante	8	Alice Mutton	39
+-- Tortuga Restaurante	14	Rössle Sauerkraut	45.6
+-- Tortuga Restaurante	30	Lakkalikööri	18
+-- Wartian Herkku	30	Fløtemysost	21.5
+-- Island Trading	10	Steeleye Stout	18
+-- Pericles Comidas clásicas	20	Filo Mix	7
+-- Königlich Essen	5	Genen Shouyu	15.5
+-- Königlich Essen	4	NuNuCa Nuß-Nougat-Creme	14
+-- Königlich Essen	4	Chartreuse verte	18
+-- Save-a-lot Markets	21	Pavlova	17.45
+-- Save-a-lot Markets	70	Steeleye Stout	18
+-- Save-a-lot Markets	30	Spegesild	12
+-- Save-a-lot Markets	40	Raclette Courdavault	55
+-- Save-a-lot Markets	80	Vegie-spread	43.9
+-- Königlich Essen	6	Grandma's Boysenberry Spread	25
+-- Königlich Essen	12	Konbu	6
+-- Königlich Essen	9	Tofu	23.25
+-- Königlich Essen	4	Gorgonzola Telino	12.5
+-- Königlich Essen	40	Mozzarella di Giovanni	34.8
+-- Bólido Comidas preparadas	24	Chef Anton's Cajun Seasoning	22
+-- Bólido Comidas preparadas	16	Ravioli Angelo	19.5
+-- Bólido Comidas preparadas	50	Rhönbräu Klosterbier	7.75
+-- Folk och fä HB	25	Chang	19
+-- Folk och fä HB	50	Queso Cabrales	21
+-- Folk och fä HB	35	Nord-Ost Matjeshering	25.89
+-- Folk och fä HB	30	Escargots de Bourgogne	13.25
+-- Furia Bacalhau e Frutos do Mar	9	Raclette Courdavault	55
+-- Furia Bacalhau e Frutos do Mar	40	Louisiana Fiery Hot Pepper Sauce	21.05
+-- Furia Bacalhau e Frutos do Mar	10	Scottish Longbreads	12.5
+-- Split Rail Beer & Ale	10	Teatime Chocolate Biscuits	9.2
+-- Split Rail Beer & Ale	8	Nord-Ost Matjeshering	25.89
+-- Split Rail Beer & Ale	20	Côte de Blaye	263.5
+-- Split Rail Beer & Ale	12	Gnocchi di nonna Alice	38
+-- LILA-Supermercado	50	Gumbär Gummibärchen	31.23
+-- LILA-Supermercado	25	Mozzarella di Giovanni	34.8
+-- Bon app'	15	Tourtière	7.45
+-- Mère Paillarde	40	Carnarvon Tigers	62.5
+-- Mère Paillarde	10	Singaporean Hokkien Fried Mee	14
+-- Mère Paillarde	16	Zaanse koeken	9.5
+-- Wartian Herkku	10	Tofu	23.25
+-- Wartian Herkku	10	Sir Rodney's Scones	10
+-- Wartian Herkku	40	Fløtemysost	21.5
+-- Victuailles en stock	8	Filo Mix	7
+-- Victuailles en stock	10	Scottish Longbreads	12.5
+-- Hungry Owl All-Night Grocers	7	Chang	19
+-- Hungry Owl All-Night Grocers	25	Gorgonzola Telino	12.5
+-- Hungry Owl All-Night Grocers	6	Mascarpone Fabioli	32
+-- Hungry Owl All-Night Grocers	48	Manjimup Dried Apples	53
+-- Princesa Isabel Vinhoss	18	Chef Anton's Cajun Seasoning	22
+-- Frankenversand	40	Tunnbröd	9
+-- Frankenversand	24	Gumbär Gummibärchen	31.23
+-- Frankenversand	20	Inlagd Sill	19
+-- Frankenversand	28	Gravad lax	26
+-- Frankenversand	25	Mozzarella di Giovanni	34.8
+-- Old World Delicatessen	20	Alice Mutton	39
+-- Old World Delicatessen	15	Nord-Ost Matjeshering	25.89
+-- Mère Paillarde	10	Chef Anton's Cajun Seasoning	22
+-- Mère Paillarde	70	Alice Mutton	39
+-- Mère Paillarde	28	Tarte au sucre	49.3
+-- Bon app'	20	Carnarvon Tigers	62.5
+-- Bon app'	12	Jack's New England Clam Chowder	9.65
+-- Bon app'	40	Ipoh Coffee	46
+-- Simons bistro	8	Geitost	2.5
+-- Simons bistro	9	Raclette Courdavault	55
+-- Frankenversand	24	Chang	19
+-- Frankenversand	56	Gorgonzola Telino	12.5
+-- Frankenversand	40	Inlagd Sill	19
+-- Frankenversand	40	Pâté chinois	24
+-- Lehmanns Marktstand	50	Wimmers gute Semmelknödel	33.25
+-- Lehmanns Marktstand	4	Scottish Longbreads	12.5
+-- Lehmanns Marktstand	15	Lakkalikööri	18
+-- White Clover Markets	35	Chef Anton's Cajun Seasoning	22
+-- White Clover Markets	70	Northwoods Cranberry Sauce	40
+-- QUICK-Stop	70	Northwoods Cranberry Sauce	40
+-- QUICK-Stop	80	Teatime Chocolate Biscuits	9.2
+-- QUICK-Stop	9	Singaporean Hokkien Fried Mee	14
+-- Rattlesnake Canyon Grocery	36	Alice Mutton	39
+-- Rattlesnake Canyon Grocery	20	Gnocchi di nonna Alice	38
+-- Familia Arquibaldo	10	NuNuCa Nuß-Nougat-Creme	14
+-- Familia Arquibaldo	50	Chartreuse verte	18
+-- Familia Arquibaldo	4	Boston Crab Meat	18.4
+-- Familia Arquibaldo	6	Rhönbräu Klosterbier	7.75
+-- Die Wandernde Kuh	15	Chais	18
+-- Die Wandernde Kuh	25	Tunnbröd	9
+-- Split Rail Beer & Ale	24	Tourtière	7.45
+-- La maison d'Asie	15	Valkoinen suklaa	16.25
+-- La maison d'Asie	18	Gudbrandsdalsost	36
+-- Ernst Handel	20	Côte de Blaye	263.5
+-- Ernst Handel	13	Jack's New England Clam Chowder	9.65
+-- Ernst Handel	77	Gula Malacca	19.45
+-- Ernst Handel	10	Louisiana Fiery Hot Pepper Sauce	21.05
+-- Furia Bacalhau e Frutos do Mar	10	Guaraná Fantástica	4.5
+-- Furia Bacalhau e Frutos do Mar	20	Tourtière	7.45
+-- Piccolo und mehr	12	Queso Cabrales	21
+-- Piccolo und mehr	50	Côte de Blaye	263.5
+-- Pericles Comidas clásicas	12	Chais	18
+-- Pericles Comidas clásicas	4	Thüringer Rostbratwurst	123.79
+-- Around the Horn	25	Guaraná Fantástica	4.5
+-- Around the Horn	25	Ravioli Angelo	19.5
+-- Die Wandernde Kuh	30	Gorgonzola Telino	12.5
+-- Die Wandernde Kuh	12	Pâté chinois	24
+-- Die Wandernde Kuh	20	Gudbrandsdalsost	36
+-- LILA-Supermercado	30	Ikura	31
+-- LILA-Supermercado	16	Gumbär Gummibärchen	31.23
+-- LILA-Supermercado	8	Camembert Pierrot	34
+-- La maison d'Asie	10	Guaraná Fantástica	4.5
+-- La maison d'Asie	10	Sasquatch Ale	14
+-- La maison d'Asie	20	Inlagd Sill	19
+-- Seven Seas Imports	56	Pavlova	17.45
+-- Seven Seas Imports	70	Gorgonzola Telino	12.5
+-- Seven Seas Imports	80	Camembert Pierrot	34
+-- Blondel père et fils	30	Rössle Sauerkraut	45.6
+-- Blondel père et fils	35	Thüringer Rostbratwurst	123.79
+-- Blondel père et fils	10	Côte de Blaye	263.5
+-- Blondel père et fils	35	Maxilaku	20
+-- Blondel père et fils	28	Tourtière	7.45
+-- QUICK-Stop	54	Chartreuse verte	18
+-- QUICK-Stop	55	Camembert Pierrot	34
+-- Bon app'	50	NuNuCa Nuß-Nougat-Creme	14
+-- Bon app'	20	Manjimup Dried Apples	53
+-- Bon app'	24	Tourtière	7.45
+-- Drachenblut Delikatessend	20	Gorgonzola Telino	12.5
+-- Drachenblut Delikatessend	12	Rhönbräu Klosterbier	7.75
+-- Drachenblut Delikatessend	12	Lakkalikööri	18
+-- Eastern Connection	30	Gudbrandsdalsost	36
+-- Eastern Connection	5	Fløtemysost	21.5
+-- Antonio Moreno Taquería	24	Queso Cabrales	21
+-- Galería del gastrónomo	5	Louisiana Fiery Hot Pepper Sauce	21.05
+-- Galería del gastrónomo	5	Original Frankfurter grüne Soße	13
+-- Vaffeljernet	36	Sasquatch Ale	14
+-- Vaffeljernet	18	Tourtière	7.45
+-- Vaffeljernet	15	Louisiana Fiery Hot Pepper Sauce	21.05
+-- Vaffeljernet	7	Original Frankfurter grüne Soße	13
+-- Ernst Handel	5	Sir Rodney's Scones	10
+-- Ernst Handel	13	Rössle Sauerkraut	45.6
+-- Ernst Handel	25	Ravioli Angelo	19.5
+-- Ernst Handel	35	Wimmers gute Semmelknödel	33.25
+-- Split Rail Beer & Ale	20	Thüringer Rostbratwurst	123.79
+-- Split Rail Beer & Ale	18	Gnocchi di nonna Alice	38
+-- Chop-suey Chinese	15	Chais	18
+-- Chop-suey Chinese	30	Wimmers gute Semmelknödel	33.25
+-- Chop-suey Chinese	20	Longlife Tofu	10
+-- La maison d'Asie	6	Inlagd Sill	19
+-- Queen Cozinha	12	Sir Rodney's Marmalade	81
+-- Queen Cozinha	40	Côte de Blaye	263.5
+-- Queen Cozinha	70	Camembert Pierrot	34
+-- Queen Cozinha	42	Mozzarella di Giovanni	34.8
+-- Hungry Owl All-Night Grocers	80	Escargots de Bourgogne	13.25
+-- Hungry Owl All-Night Grocers	50	Fløtemysost	21.5
+-- Wolski	30	Gorgonzola Telino	12.5
+-- Wolski	15	Escargots de Bourgogne	13.25
+-- Hungry Coyote Import Store	15	Tofu	23.25
+-- Hungry Coyote Import Store	10	Tourtière	7.45
+-- Mère Paillarde	42	Gorgonzola Telino	12.5
+-- Seven Seas Imports	20	Rössle Sauerkraut	45.6
+-- Seven Seas Imports	20	Chartreuse verte	18
+-- Folk och fä HB	6	Fløtemysost	21.5
+-- Que Delícia	8	Jack's New England Clam Chowder	9.65
+-- Que Delícia	16	Vegie-spread	43.9
+-- Que Delícia	20	Louisiana Fiery Hot Pepper Sauce	21.05
+-- Hungry Owl All-Night Grocers	18	Nord-Ost Matjeshering	25.89
+-- Hungry Owl All-Night Grocers	20	Perth Pasties	32.8
+-- Hungry Owl All-Night Grocers	6	Camembert Pierrot	34
+-- Hungry Owl All-Night Grocers	30	Outback Lager	15
+-- LILA-Supermercado	14	Longlife Tofu	10
+-- Ernst Handel	32	Chef Anton's Gumbo Mix	21.35
+-- Ernst Handel	9	Carnarvon Tigers	62.5
+-- Ernst Handel	14	Thüringer Rostbratwurst	123.79
+-- Ernst Handel	60	Geitost	2.5
+-- Ernst Handel	50	Longlife Tofu	10
+-- Around the Horn	20	Konbu	6
+-- Around the Horn	15	Valkoinen suklaa	16.25
+-- Around the Horn	20	Gnocchi di nonna Alice	38
+-- Berglunds snabbköp	28	Sir Rodney's Marmalade	81
+-- Berglunds snabbköp	15	Camembert Pierrot	34
+-- Split Rail Beer & Ale	10	Uncle Bob's Organic Dried Pears	30
+-- Split Rail Beer & Ale	20	Camembert Pierrot	34
+-- Split Rail Beer & Ale	8	Scottish Longbreads	12.5
+-- Familia Arquibaldo	15	Guaraná Fantástica	4.5
+-- Familia Arquibaldo	10	Sasquatch Ale	14
+-- Santé Gourmet	15	Guaraná Fantástica	4.5
+-- Santé Gourmet	6	Rössle Sauerkraut	45.6
+-- Santé Gourmet	12	Raclette Courdavault	55
+-- Santé Gourmet	15	Fløtemysost	21.5
+-- Seven Seas Imports	15	Røgede sild	9.5
+-- Seven Seas Imports	20	Filo Mix	7
+-- Seven Seas Imports	40	Perth Pasties	32.8
+-- Bottom-Dollar Marketse	16	Ikura	31
+-- Bottom-Dollar Marketse	15	Pâté chinois	24
+-- Bottom-Dollar Marketse	20	Tarte au sucre	49.3
+-- Bottom-Dollar Marketse	30	Outback Lager	15
+-- Ernst Handel	60	Gorgonzola Telino	12.5
+-- Ernst Handel	40	Steeleye Stout	18
+-- Ernst Handel	45	Spegesild	12
+-- Ernst Handel	24	Mozzarella di Giovanni	34.8
+-- Drachenblut Delikatessend	18	Konbu	6
+-- Piccolo und mehr	50	Gudbrandsdalsost	36
+-- Save-a-lot Markets	25	Chang	19
+-- Save-a-lot Markets	42	Tofu	23.25
+-- Save-a-lot Markets	7	NuNuCa Nuß-Nougat-Creme	14
+-- Save-a-lot Markets	70	Gumbär Gummibärchen	31.23
+-- Save-a-lot Markets	32	Gorgonzola Telino	12.5
+-- Hungry Coyote Import Store	10	Konbu	6
+-- Hungry Coyote Import Store	10	Tarte au sucre	49.3
+-- HILARIÓN-Abastos	28	Spegesild	12
+-- HILARIÓN-Abastos	70	Perth Pasties	32.8
+-- HILARIÓN-Abastos	8	Gudbrandsdalsost	36
+-- Frankenversand	40	Tunnbröd	9
+-- Frankenversand	60	Fløtemysost	21.5
+-- Frankenversand	21	Mozzarella di Giovanni	34.8
+-- Princesa Isabel Vinhoss	10	Sir Rodney's Scones	10
+-- Princesa Isabel Vinhoss	18	Manjimup Dried Apples	53
+-- Save-a-lot Markets	30	Steeleye Stout	18
+-- Save-a-lot Markets	120	Pâté chinois	24
+-- Vaffeljernet	60	Scottish Longbreads	12.5
+-- Vaffeljernet	30	Fløtemysost	21.5
+-- Vaffeljernet	35	Lakkalikööri	18
+-- Vaffeljernet	14	Original Frankfurter grüne Soße	13
+-- Eastern Connection	21	Thüringer Rostbratwurst	123.79
+-- Eastern Connection	35	Steeleye Stout	18
+-- Eastern Connection	30	Maxilaku	20
+-- Rattlesnake Canyon Grocery	18	Nord-Ost Matjeshering	25.89
+-- Rattlesnake Canyon Grocery	70	Gnocchi di nonna Alice	38
+-- Rattlesnake Canyon Grocery	20	Louisiana Fiery Hot Pepper Sauce	21.05
+-- Rattlesnake Canyon Grocery	60	Fløtemysost	21.5
+-- Ernst Handel	60	Tunnbröd	9
+-- Ernst Handel	65	Vegie-spread	43.9
+-- Ernst Handel	21	Pavlova	17.45
+-- Ernst Handel	70	Chocolade	12.75
+-- Magazzini Alimentari Riuniti	30	Gumbär Gummibärchen	31.23
+-- Magazzini Alimentari Riuniti	40	Singaporean Hokkien Fried Mee	14
+-- Magazzini Alimentari Riuniti	30	Maxilaku	20
+-- LINO-Delicateses	50	Aniseed Syrup	10
+-- Queen Cozinha	10	Chais	18
+-- Queen Cozinha	30	Sir Rodney's Scones	10
+-- Queen Cozinha	42	Rössle Sauerkraut	45.6
+-- Queen Cozinha	5	Inlagd Sill	19
+-- Queen Cozinha	2	Boston Crab Meat	18.4
+-- Ottilies Käseladen	30	Queso Cabrales	21
+-- Ottilies Käseladen	15	Gudbrandsdalsost	36
+-- Ottilies Käseladen	15	Fløtemysost	21.5
+-- Folies gourmandes	10	Gravad lax	26
+-- Folies gourmandes	6	Tourtière	7.45
+-- Folies gourmandes	35	Tarte au sucre	49.3
+-- Océano Atlántico Ltda.	12	Tofu	23.25
+-- Océano Atlántico Ltda.	12	Sir Rodney's Scones	10
+-- Bottom-Dollar Marketse	49	Geitost	2.5
+-- Bottom-Dollar Marketse	16	Raclette Courdavault	55
+-- Bottom-Dollar Marketse	25	Jack's New England Clam Chowder	9.65
+-- Bottom-Dollar Marketse	40	Gula Malacca	19.45
+-- Bottom-Dollar Marketse	9	Raclette Courdavault	55
+-- Wartian Herkku	20	Tofu	23.25
+-- La maison d'Asie	24	Chais	18
+-- La maison d'Asie	40	Tarte au sucre	49.3
+-- La maison d'Asie	14	Lakkalikööri	18
+-- Familia Arquibaldo	18	Teatime Chocolate Biscuits	9.2
+-- Familia Arquibaldo	50	Geitost	2.5
+-- Hungry Coyote Import Store	2	Alice Mutton	39
+-- Hungry Coyote Import Store	20	Geitost	2.5
+-- Wartian Herkku	20	Teatime Chocolate Biscuits	9.2
+-- Wartian Herkku	10	Perth Pasties	32.8
+-- Wartian Herkku	20	Ravioli Angelo	19.5
+-- Simons bistro	50	Côte de Blaye	263.5
+-- Simons bistro	2	Spegesild	12
+-- Simons bistro	36	Scottish Longbreads	12.5
+-- Simons bistro	35	Original Frankfurter grüne Soße	13
+-- QUICK-Stop	60	Chang	19
+-- QUICK-Stop	55	Zaanse koeken	9.5
+-- QUICK-Stop	16	Sirop d'érable	28.5
+-- QUICK-Stop	15	Longlife Tofu	10
+-- Richter Supermarkt	60	Camembert Pierrot	34
+-- Richter Supermarkt	20	Gudbrandsdalsost	36
+-- Wellington Importadora	20	Mishi Kobe Niku	97
+-- Wellington Importadora	2	Konbu	6
+-- Wellington Importadora	8	Outback Lager	15
+-- Wellington Importadora	20	Röd Kaviar	15
+-- Que Delícia	4	Teatime Chocolate Biscuits	9.2
+-- Que Delícia	30	Gumbär Gummibärchen	31.23
+-- Que Delícia	15	Perth Pasties	32.8
+-- Que Delícia	10	Original Frankfurter grüne Soße	13
+-- Franchi S.p.A.	2	Gumbär Gummibärchen	31.23
+-- Gourmet Lanchonetes	14	Gorgonzola Telino	12.5
+-- Gourmet Lanchonetes	20	Raclette Courdavault	55
+-- Mère Paillarde	60	Steeleye Stout	18
+-- Mère Paillarde	49	Côte de Blaye	263.5
+-- Mère Paillarde	30	Scottish Longbreads	12.5
+-- La maison d'Asie	10	Pâté chinois	24
+-- La maison d'Asie	20	Lakkalikööri	18
+-- Galería del gastrónomo	5	Gnocchi di nonna Alice	38
+-- Galería del gastrónomo	7	Wimmers gute Semmelknödel	33.25
+-- Piccolo und mehr	35	Tofu	23.25
+-- Reggiani Caseifici	20	Spegesild	12
+-- Hungry Owl All-Night Grocers	40	Valkoinen suklaa	16.25
+-- Hungry Owl All-Night Grocers	35	Vegie-spread	43.9
+-- Ernst Handel	45	Alice Mutton	39
+-- Ernst Handel	50	Sir Rodney's Scones	10
+-- Ernst Handel	30	Gnocchi di nonna Alice	38
+-- Ernst Handel	70	Raclette Courdavault	55
+-- Bottom-Dollar Marketse	50	Alice Mutton	39
+-- Bottom-Dollar Marketse	50	Boston Crab Meat	18.4
+-- Bottom-Dollar Marketse	30	Zaanse koeken	9.5
+-- Split Rail Beer & Ale	10	Gumbär Gummibärchen	31.23
+-- Split Rail Beer & Ale	40	Tourtière	7.45
+-- Princesa Isabel Vinhoss	28	Gnocchi di nonna Alice	38
+-- Folk och fä HB	6	Queso Cabrales	21
+-- Folk och fä HB	18	Lakkalikööri	18
+-- Consolidated Holdings	10	Chang	19
+-- Consolidated Holdings	12	Gustaf's Knäckebröd	21
+-- Consolidated Holdings	10	Mozzarella di Giovanni	34.8
+-- Blondel père et fils	5	Spegesild	12
+-- Blondel père et fils	40	Gnocchi di nonna Alice	38
+-- Blondel père et fils	30	Wimmers gute Semmelknödel	33.25
+-- Blondel père et fils	24	Rhönbräu Klosterbier	7.75
+-- Wartian Herkku	15	Perth Pasties	32.8
+-- Toms Spezialitäten	15	Teatime Chocolate Biscuits	9.2
+-- Toms Spezialitäten	20	Sasquatch Ale	14
+-- Toms Spezialitäten	15	Ravioli Angelo	19.5
+-- Mère Paillarde	15	Queso Manchego La Pastora	38
+-- Mère Paillarde	16	Pavlova	17.45
+-- Mère Paillarde	6	Wimmers gute Semmelknödel	33.25
+-- Mère Paillarde	30	Longlife Tofu	10
+-- Save-a-lot Markets	45	Chang	19
+-- Save-a-lot Markets	49	Pavlova	17.45
+-- Save-a-lot Markets	24	Thüringer Rostbratwurst	123.79
+-- Save-a-lot Markets	90	Sirop d'érable	28.5
+-- Old World Delicatessen	50	Schoggi Schokolade	43.9
+-- Ernst Handel	30	Queso Cabrales	21
+-- Ernst Handel	80	Tourtière	7.45
+-- Ernst Handel	60	Louisiana Hot Spiced Okra	17
+-- Reggiani Caseifici	6	Queso Cabrales	21
+-- Reggiani Caseifici	12	Rössle Sauerkraut	45.6
